@@ -17,7 +17,7 @@ git clone git@github.com:tommica/Drupal-deployment-test-theme.git sites/all/them
 wget https://github.com/tommica/Drupal-deployment-test-features/raw/master/everything_tommidep.tar -O sites/all/modules/everything_tommidep.tar &&
 tar -xvf sites/all/modules/everything_tommidep.tar &&
 drush si -y standard --db-url="$1" --account-name="$2" --account-pass="$3" --site-name="$4" &&
-drush en -y ckeditor imce &&
+drush en -y ckeditor imce features &&
 drush ckeditor-download &&
 drush pm-enable -y tommi &&
 drush vset theme_default tommi &&
