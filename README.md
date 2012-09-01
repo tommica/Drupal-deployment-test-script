@@ -1,4 +1,4 @@
 Drupal-deployment-test-script
 =============================
 
-Script for deployment
+Script for deployment + makefile
