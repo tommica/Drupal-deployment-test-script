@@ -24,7 +24,7 @@ drush ckeditor-download &&
 drush pm-enable -y tommi &&
 drush vset theme_default tommi &&
 drush en -y everything_tommidep &&
-rm -rf tommi.make profiles/tommidep sites/all/modules/everything_tommidep.tar &&
+rm -rf tommi.make sites/all/modules/everything_tommidep.tar &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/bunny-1.jpg &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/bunny-2.jpg &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/dog-1.png &&
