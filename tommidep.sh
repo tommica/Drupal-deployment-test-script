@@ -13,16 +13,17 @@ echo "$(tput setb 1) Grab an energy drink, this might take a while $(tput sgr0)"
 
 wget https://raw.github.com/tommica/Drupal-deployment-test-script/master/tommi.make &&
 drush make -y tommi.make &&
+git clone git@github.com:tommica/Drupal-deployment-test-features.git IMPORTDATA &&
 git clone git@github.com:tommica/Drupal-deployment-test-theme.git sites/all/themes/tommi &&
-wget https://github.com/tommica/Drupal-deployment-test-features/raw/master/everything_tommidep.tar -O sites/all/modules/everything_tommidep.tar &&
-tar -xvf sites/all/modules/everything_tommidep.tar -C sites/all/modules/ &&
+tar -xvf IMPORTDATA/everything_tommidep.tar -C sites/all/modules/ &&
 drush si -y standard --db-url="$1" --account-name="$2" --account-pass="$3" --site-name="$4" &&
-drush en -y ckeditor imce features &&
+drush en -y ckeditor features &&
 drush ckeditor-download &&
 drush pm-enable -y tommi &&
 drush vset theme_default tommi &&
 drush en -y everything_tommidep &&
-rm -rf tommi.make sites/all/modules/everything_tommidep.tar &&
+drush ne-import < IMPORTDATA/tommi_data.nodes &&
+rm -rf tommi.make sites/all/modules/everything_tommidep.tar IMPORTDATA &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/bunny-1.jpg &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/bunny-2.jpg &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/dog-1.png &&

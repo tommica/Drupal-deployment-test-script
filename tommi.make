@@ -21,6 +21,10 @@ projects[imce][version] = "1.5"
 
 projects[nice_menus][version] = "2.1"
 
+projects[node_export][version] = "3.0"
+
+projects[omega_tools][version] = "3.0-rc4"
+
 projects[panels][version] = "3.3"
 
 projects[panels_breadcrumbs][version] = "1.6"
@@ -28,6 +32,8 @@ projects[panels_breadcrumbs][version] = "1.6"
 projects[pathauto][version] = "1.2"
 
 projects[token][version] = "1.2"
+
+projects[uuid][version] = "1.0-alpha3"
 
 projects[views][version] = "3.5"
 
