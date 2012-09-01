@@ -40,10 +40,3 @@ projects[views][version] = "3.5"
 ; Themes
 projects[omega][version] = "3.1"
 
-; Modules
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
-projects[everything_tommidep][download][type] = ""
-projects[everything_tommidep][download][url] = ""
-projects[everything_tommidep][type] = "module"
-
