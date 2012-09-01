@@ -33,7 +33,7 @@ projects[pathauto][version] = "1.2"
 
 projects[token][version] = "1.2"
 
-projects[uuid][version] = "1.0-alpha3"
+projects[uuid][version] = "1.0-alpha3+47-dev"
 
 projects[views][version] = "3.5"
 
