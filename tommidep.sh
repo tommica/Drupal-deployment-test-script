@@ -18,7 +18,7 @@ git clone git@github.com:tommica/Drupal-deployment-test-profile.git profiles/tom
 wget https://github.com/tommica/Drupal-deployment-test-features/raw/master/everything_tommidep.tar -O sites/all/modules/everything_tommidep.tar &&
 tar -xvf sites/all/modules/everything_tommidep.tar &&
 drush si -y tommidep --db-url="$1" --account-name="$2" --account-pass="$3" --site-name="$4" &&
-drush en everything_tommidep &&
+drush en -y everything_tommidep &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/bunny-1.jpg &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/bunny-2.jpg &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/dog-1.png &&
