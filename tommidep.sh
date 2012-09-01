@@ -30,6 +30,7 @@ drush ckeditor-download &&
 drush pm-enable -y tommi &&
 drush vset theme_default tommi &&
 drush en -y everything_tommidep &&
+drush ne-import --file=IMPORTDATA/export.xml &&
 rm -rf tommi.make IMPORTDATA
 
 echo "$(tput setb 1) DONE $(tput sgr0)"
