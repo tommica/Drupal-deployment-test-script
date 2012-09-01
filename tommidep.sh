@@ -14,14 +14,15 @@ echo "$(tput setb 1) Grab an energy drink, this might take a while $(tput sgr0)"
 wget https://raw.github.com/tommica/Drupal-deployment-test-script/master/tommi.make &&
 drush make -y tommi.make &&
 git clone git@github.com:tommica/Drupal-deployment-test-theme.git sites/all/themes/tommi &&
-git clone git@github.com:tommica/Drupal-deployment-test-profile.git profiles/tommidep &&
 wget https://github.com/tommica/Drupal-deployment-test-features/raw/master/everything_tommidep.tar -O sites/all/modules/everything_tommidep.tar &&
 tar -xvf sites/all/modules/everything_tommidep.tar &&
-drush si -y tommidep --db-url="$1" --account-name="$2" --account-pass="$3" --site-name="$4" &&
+drush si -y standard --db-url="$1" --account-name="$2" --account-pass="$3" --site-name="$4" &&
 drush dl ckeditor &&
 drush dl imce &&
 drush en -y ckeditor imce &&
 drush ckeditor-download &&
+drush pm-enable -y tommi &&
+drush vset theme_default tommi &&
 drush en -y everything_tommidep &&
 rm -rf tommi.make profiles/tommidep sites/all/modules/everything_tommidep.tar &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/bunny-1.jpg &&
