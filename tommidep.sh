@@ -15,7 +15,7 @@ git clone git@github.com:tommica/Drupal-deployment-test-features.git IMPORTDATA 
 drush make -y IMPORTDATA/tommi.make &&
 git clone git@github.com:tommica/Drupal-deployment-test-theme.git sites/all/themes/tommi &&
 tar -xvf IMPORTDATA/everything_tommi.tar -C sites/all/modules/ &&
-drush si -y standard --db-url="$1" --account-name="$2" --account-pass="$3" --site-name="$4" &&
+drush si -y standard --db-url="$1" --account-name="$2" --account-pass="$3" --site-name="$4" --site-email="$5" &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/bunny-1.jpg &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/bunny-2.jpg &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/dog-1.png &&
