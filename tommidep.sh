@@ -11,11 +11,10 @@ fi
 
 echo "$(tput setb 1) Grab an energy drink, this might take a while $(tput sgr0)"
 
-wget https://raw.github.com/tommica/Drupal-deployment-test-script/master/tommi.make &&
-drush make -y tommi.make &&
 git clone git@github.com:tommica/Drupal-deployment-test-features.git IMPORTDATA &&
+drush make -y IMPORTDATA/tommi.make &&
 git clone git@github.com:tommica/Drupal-deployment-test-theme.git sites/all/themes/tommi &&
-tar -xvf IMPORTDATA/everything_tommidep.tar -C sites/all/modules/ &&
+tar -xvf IMPORTDATA/everything_tommi.tar -C sites/all/modules/ &&
 drush si -y standard --db-url="$1" --account-name="$2" --account-pass="$3" --site-name="$4" &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/bunny-1.jpg &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/bunny-2.jpg &&
@@ -29,9 +28,9 @@ drush en -y ckeditor features imce &&
 drush ckeditor-download &&
 drush pm-enable -y tommi &&
 drush vset theme_default tommi &&
-drush en -y everything_tommidep &&
+drush en -y everything_tommi &&
 drush ne-import --file=IMPORTDATA/export.xml &&
-rm -rf tommi.make IMPORTDATA
+rm -rf IMPORTDATA
 
 echo "$(tput setb 1) DONE $(tput sgr0)"
 exit 0
