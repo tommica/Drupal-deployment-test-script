@@ -26,10 +26,10 @@ wget http://lorempixel.com/900/900/nature/ -O sites/default/files/random-1.jpg &
 wget http://lorempixel.com/900/900/nature/ -O sites/default/files/random-2.jpg &&
 drush en -y ckeditor features imce &&
 drush ckeditor-download &&
-drush pm-enable -y tommi &&
-drush vset theme_default tommi &&
 drush en -y everything_tommi &&
 drush ne-import --file=IMPORTDATA/export.xml &&
+drush pm-enable -y tommi &&
+drush vset theme_default tommi &&
 rm -rf IMPORTDATA
 
 echo "$(tput setb 1) DONE $(tput sgr0)"
