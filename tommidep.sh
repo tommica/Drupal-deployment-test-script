@@ -32,7 +32,7 @@ wget http://lorempixel.com/900/900/animals/ -O sites/default/files/cat-1.jpg &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/cat-2.jpg &&
 wget http://lorempixel.com/900/900/nature/ -O sites/default/files/random-1.jpg &&
 wget http://lorempixel.com/900/900/nature/ -O sites/default/files/random-2.jpg &&
-drush en -y ckeditor features imce &&
+drush en -y ckeditor features imce node_export &&
 drush ckeditor-download &&
 drush pm-enable -y tommi &&
 drush en -y basic_page animal_page_taxonomies google_font image_styles ckeditor_settings animal_list_view animal_panels main_menu blocks &&
