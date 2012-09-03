@@ -34,9 +34,9 @@ wget http://lorempixel.com/900/900/nature/ -O sites/default/files/random-1.jpg &
 wget http://lorempixel.com/900/900/nature/ -O sites/default/files/random-2.jpg &&
 drush en -y ckeditor features imce &&
 drush ckeditor-download &&
-drush en -y everything_tommi &&
-drush ne-import --file=IMPORTDATA/export.xml &&
 drush pm-enable -y tommi &&
+drush en -y basic_page animal_page_taxonomies google_font image_styles ckeditor_settings animal_list_view animal_panels main_menu blocks &&
+drush ne-import --file=IMPORTDATA/export.xml &&
 drush vset theme_default tommi &&
 rm -rf IMPORTDATA
 
