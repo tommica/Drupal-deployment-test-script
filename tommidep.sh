@@ -13,8 +13,16 @@ echo "$(tput setb 1) Grab an energy drink, this might take a while $(tput sgr0)"
 
 git clone git@github.com:tommica/Drupal-deployment-test-features.git IMPORTDATA &&
 drush make -y IMPORTDATA/tommi.make &&
-git clone git@github.com:tommica/Drupal-deployment-test-theme.git sites/all/themes/tommi &&
-tar -xvf IMPORTDATA/everything_tommi.tar -C sites/all/modules/ &&
+git clone git@github.com:tommica/Drupal-deployment-test-theme.git sites/all/themes/tommi
+
+FILES=IMPORTDATA/*.tar
+for f in $FILES
+do
+  echo "$(tput setb 1) Extracting features $(tput sgr0)"
+  tar -xvf $f -C sites/all/modules/ 
+done
+
+
 drush si -y standard --db-url="$1" --account-name="$2" --account-pass="$3" --site-name="$4" --site-mail="$5" &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/bunny-1.jpg &&
 wget http://lorempixel.com/900/900/animals/ -O sites/default/files/bunny-2.jpg &&
