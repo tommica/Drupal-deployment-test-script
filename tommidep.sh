@@ -38,7 +38,6 @@ drush pm-enable -y tommi &&
 drush en -y basic_page animal_page_taxonomies google_font image_styles ckeditor_settings animal_list_view animal_panels blocks &&
 drush en -y strongarm_settings &&
 drush en -y main_menu &&
-drush ne-import --file=IMPORTDATA/export.xml &&
 drush vset theme_default tommi &&
 rm -rf IMPORTDATA
 
